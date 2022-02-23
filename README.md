@@ -9,7 +9,7 @@
 
 **Você pode copiar o projeto e rodá-lo localmente, segue abaixo 3 passos para poder utilizar o projeto!**
 
-1. Clique no botão para criar um novo banco de dados para salvar os dados que você irá tabular
+1. Clique no botão para criar um novo banco de dados para salvar informações que você irá tabular
 2. Insira os dados que o cliente está fornecendo
 3. Clique em tabular dados e estará pronto para cadastrar o próximo cliente
 4. Após cadastrar todos os cliente você poderá usar tanto o banco de dados quanto clicar no botão "Exportar para excel", desta forma todos os dados do banco serão convertidos
