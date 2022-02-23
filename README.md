@@ -2,6 +2,11 @@
 
 <hr>
 
+### Screenshots do Projeto:
+<img src='Screenshots/GUI_home.png' width='150'>
+<img src='Screenshots/GUI_alert.png' width='150'>
+<img src='Screenshots/GUI_confirmation.png' width='150'>
+
 ### Como rodar o projeto:
 
 **Você pode copiar o projeto e rodá-lo localmente, segue abaixo 3 passos para poder utilizar o projeto!**
