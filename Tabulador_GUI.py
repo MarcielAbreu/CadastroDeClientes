@@ -14,14 +14,25 @@ import pandas as pd
 ###### Parâmetros ######
 db = 'db_cadastro_clientes.db'
 hoje = datetime.datetime.now()
-data = datetime.datetime(hoje.year, hoje.month, hoje.day).strftime('%d/%m/%Y')
+today = datetime.datetime(hoje.year, hoje.month, hoje.day).strftime('%d/%m/%Y')
 mes = datetime.datetime(hoje.year, hoje.month, hoje.day).strftime('%B')
+data = datetime.datetime(hoje.year, hoje.month, hoje.day)
+data1 = datetime.datetime(hoje.year, hoje.month +2, hoje.day) #range de data
 
 ###### Config. App ######
 app=tk.Tk()
 app.title("Cadastro de Clientes")
-app.geometry("300x450")
+app.geometry("300x435")
 app.configure(background="Black")
+
+dRan = pd.date_range(start =data,
+       end =data1)
+
+res = dRan.strftime('%d/%m/%Y')
+prazo_prot = []
+
+for i in range(0,35): #range da quantidade de dias que quer mostrar. Para não ficar fora do range, deve ser aplicado no data1 o range de data 
+    prazo_prot.append(res[i])
 
 ###### Listas ######
 motivo = ["Alteração Cadastral","Alteração de E-mail","Alteração de Telefone","Consulta","Credenciamento","Descredenciamento"]
@@ -109,9 +120,10 @@ frame.pack(pady=5)
 
 lb_data = tk.Label(frame,text="Data",background="Red",foreground="White")
 lb_data.grid(row=1, column=0, padx=5, pady=5)
-cb_data = ttk.Combobox(frame,values=data)
+
+cb_data = ttk.Combobox(frame,values=today)
 cb_data.grid(row=1, column=1, padx=5, pady=5)
-cb_data.set(data)
+cb_data.set(today)
 
 
 lb_mes = tk.Label(frame,text="Mês",background="Red",foreground="White")
@@ -159,7 +171,7 @@ cb_prot.grid(row=7, column=1, padx=5, pady=5)
 lb_prazo_prot = tk.Label(frame,text="Prazo do protocolo",background="Red",foreground="White")
 lb_prazo_prot.grid(row=8, column=0, padx=5, pady=5)
 
-cb_prazo_prot = tk.Entry(frame,width=23)
+cb_prazo_prot = ttk.Combobox(frame,values=prazo_prot)
 cb_prazo_prot.grid(row=8, column=1, padx=5, pady=5)
 
 
